@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from './star-rating';
+import Star from './star';
 
 export default class Movie extends React.Component {
     constructor(props){
@@ -22,7 +22,13 @@ export default class Movie extends React.Component {
                 <img src={this.state.imageURL} />
                 <div className='row title-and-rating'>
                     <h3 className='movie-title'>{this.state.title}</h3>
-                    <StarRating rating={0} />
+                    <div className='star-container'>
+                        <Star />
+                        <Star />
+                        <Star />
+                        <Star />
+                        <Star />
+                    </div>
                 </div>
                 <p className='movie-synopsis'>{this.state.synopsis}</p>
                 <p className='movie-info'><span className='bold-text'>Director: </span>{this.state.director}</p>
