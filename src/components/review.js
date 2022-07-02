@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from './star-rating';
+import ReactStars from 'react-stars';
 
 export default class Review extends React.Component {
     constructor(props){
@@ -11,10 +11,21 @@ export default class Review extends React.Component {
             dateSubmitted: props.dateSubmitted
         }
     }
+
+    ratingChanged (newRating) {
+        console.log(newRating)
+    }
+
     render(){
         return (
             <div className='review-container'>
-                <StarRating rating={0} />
+                <ReactStars 
+                    count={5}
+                    edit={false}
+                    value={this.state.rating}
+                    size={24}
+                    color2={'#ffd700'}
+                />
                 <p className='dateSubmitted'>{this.state.dateSubmitted}</p>
                 <h3 className='review-title'>{this.state.title}</h3>
                 <p className='review-text'>{this.state.text}</p>
