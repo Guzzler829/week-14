@@ -53,14 +53,6 @@ export default class MovieList extends React.Component {
                     director='Andrew Adamson, Vicky Jenson'
                     starActors='Mike Myers; Eddie Murphy; Cameron Diaz; John Lithgow'
                 />
-                <Movie
-                    title=''
-                    imageURL=''
-                    synopsis=''
-                    releaseDate=''
-                    director=''
-                    starActors=''
-                />
             </div>
         );
     }

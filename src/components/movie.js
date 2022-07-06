@@ -16,10 +16,16 @@ export default class Movie extends React.Component {
             starActors: props.starActors,
             reviews: []
         };
+        this.theReviewForm = React.createRef();
+        this.setReviewList = this.setReviewList.bind(this);
     }
 
-    ratingChanged (newRating) {
-        console.log(newRating)
+    componentDidMount() {
+        this.setReviewList();
+    }
+    
+    setReviewList() {
+        this.setState({reviews: this.theReviewForm.current.state.reviews});
     }
 
     render(){
@@ -37,15 +43,19 @@ export default class Movie extends React.Component {
                             color2={'#ffd700'}
                         />
                     </div>
+                    <h3>{this.state.rating}</h3>
                 </div>
                 <p className='movie-synopsis'>{this.state.synopsis}</p>
-                <p className='movie-info'><span className='bold-text'>Director: </span>{this.state.director}</p>
-                <p className='movie-info'><span className='bold-text'>Release date: </span>{this.state.releaseDate}</p>
-                <p className='movie-info'><span className='bold-text'>Stars: </span>{this.state.starActors}</p>   
+                <p className='movie-info'><strong>Director: </strong>{this.state.director}</p>
+                <p className='movie-info'><strong>Release date: </strong>{this.state.releaseDate}</p>
+                <p className='movie-info'><strong>Stars: </strong>{this.state.starActors}</p>   
 
                 <div className='break'></div>
 
-                <ReviewForm />
+                <ReviewForm ref={this.theReviewForm}/>
+
+                {this.state.reviews}
+                
             </div>
         );
     }

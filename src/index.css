@@ -17,10 +17,6 @@ body {
   flex-flow: row;
 }
 
-.bold-text {
-  font-weight: bold;
-}
-
 .movie-list-container {
   flex-wrap: wrap;
   justify-content: center;
@@ -54,6 +50,11 @@ body {
   flex-wrap: wrap;
 }
 
+.title-and-rating > h3 {
+  margin-top: 12px;
+  margin-left: 4px;
+}
+
 .movie-title {
   margin-top: 8px;
   margin-left: 10px;
@@ -66,8 +67,8 @@ body {
 
 
 .break {
-  margin: 20px;
-  width: 90%;
+  margin: 15px;
+  width: 93%;
   border-top: 1px gray solid;
 }
 
@@ -88,6 +89,7 @@ body {
   border: 1px gray solid;
   font-size: 1em;
   margin: 4px;
+  padding: 6px;
 }
 
 .btn {

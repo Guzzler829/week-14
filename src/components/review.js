@@ -6,7 +6,6 @@ export default class Review extends React.Component {
         super(props);
         this.state = {
             rating: props.rating,
-            title: props.title,
             text: props.text,
             dateSubmitted: props.dateSubmitted
         }
@@ -27,7 +26,6 @@ export default class Review extends React.Component {
                     color2={'#ffd700'}
                 />
                 <p className='dateSubmitted'>{this.state.dateSubmitted}</p>
-                <h3 className='review-title'>{this.state.title}</h3>
                 <p className='review-text'>{this.state.text}</p>
             </div>
         );
